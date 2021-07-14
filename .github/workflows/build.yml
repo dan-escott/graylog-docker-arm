@@ -19,7 +19,8 @@ jobs:
 
       # Check out the default branch for the Graylog docker repo
       - uses: actions/checkout@v2
-        name: Graylog2/graylog-docker
+        with:
+          name: Graylog2/graylog-docker
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -46,4 +47,4 @@ jobs:
         id: get_docker_tags
 
       - name: Build and push image
-        run: cd graylog-docker && docker buildx build --platform linux/arm/v8 --output 'type=image,push=true' ${{ steps.get_docker_tags.outputs.tags }} --build-arg GRAYLOG_VERSION=$(cat graylog-docker/VERSION)).
+        run: cd graylog-docker && docker buildx build --platform linux/arm/v8 --output 'type=image,push=true' ${{ steps.get_docker_tags.outputs.tags }} --build-arg GRAYLOG_VERSION=$(cat VERSION)).
