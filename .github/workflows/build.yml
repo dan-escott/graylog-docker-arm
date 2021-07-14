@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: Graylog2/graylog-docker
+          path: graylog-docker
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
