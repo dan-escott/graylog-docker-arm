@@ -20,7 +20,7 @@ jobs:
       # Check out the default branch for the Graylog docker repo
       - uses: actions/checkout@v2
         with:
-          name: Graylog2/graylog-docker
+          repository: Graylog2/graylog-docker
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
