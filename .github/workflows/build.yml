@@ -44,7 +44,7 @@ jobs:
       - name: Get docker tags
         shell: bash
         run: |
-          echo "##[set-output name=tags;]$(./docker-tags.sh ${{secrets.DOCKERHUB_USERNAME}}/graylog-docker-arm ${{ steps.get_branch.outputs.branch }} $(cat graylog-docker/VERSION))"
+          echo "##[set-output name=tags;]$(./docker-tags.sh ${{secrets.DOCKERHUB_USERNAME}}/graylog ${{ steps.get_branch.outputs.branch }} $(cat graylog-docker/VERSION))"
         id: get_docker_tags
 
       - name: Build and push image
