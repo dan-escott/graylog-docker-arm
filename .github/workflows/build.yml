@@ -48,4 +48,4 @@ jobs:
         id: get_docker_tags
 
       - name: Build and push image
-        run: docker buildx build --platform linux/arm64/v8 --output 'type=image,push=true' ${{ steps.get_docker_tags.outputs.tags }} --build-arg GRAYLOG_VERSION=$(cat graylog-docker/VERSION) graylog-docker
+        run: docker buildx build --platform linux/arm64/v8 --output 'type=image,push=true' ${{ steps.get_docker_tags.outputs.tags }} --build-arg GRAYLOG_VERSION=$(cat graylog-docker/VERSION) -f graylog-docker/docker/oss/Dockerfile graylog-docker
